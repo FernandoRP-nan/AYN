@@ -1,4 +1,5 @@
-package com.nancrow.ayn.db;public class DBmanagerSqlite {
-    slnefkjnlicejlisjcelisnheclsinh
+package com.nancrow.ayn.db;
+public class DBmanagerSqlite {
+    int n;
 
 }
