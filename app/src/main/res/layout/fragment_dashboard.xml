@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.dashboard.DashboardFragment">
 
+
     <TextView
         android:id="@+id/text_dashboard"
         android:layout_width="match_parent"
@@ -19,4 +20,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="295dp"
+        android:layout_height="201dp"
+        android:contentDescription="Imagen seleccionable"
+        android:onClick="onImageButtonClick"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.03"
+        tools:ignore="ImageContrastCheck" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
