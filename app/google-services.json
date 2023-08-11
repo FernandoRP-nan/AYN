@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "972114296172",
+    "project_id": "allyn-30588",
+    "storage_bucket": "allyn-30588.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:972114296172:android:23d04d9a4d695752818749",
+        "android_client_info": {
+          "package_name": "com.nancrow.ayn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "972114296172-qma0ab7ne26ii2319nja7rbjknsamrn7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBC8WuPzTe-cXhcoSktQNrlxPVhIUcIOZg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "972114296172-qma0ab7ne26ii2319nja7rbjknsamrn7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
