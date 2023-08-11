@@ -1,6 +1,3 @@
-package com.nancrow.ayn.db;
+package com.nancrow.ayn.db;public class DBmanagerSqlite {
 
-public class DBmanagerSqlite {
-    //Tabla empresa
-    public static final String Tabla_Empresa = "empresas";
 }
