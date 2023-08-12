@@ -16,12 +16,11 @@ import androidx.lifecycle.ViewModelProvider
 import com.nancrow.ayn.databinding.FragmentDashboardBinding
 
 
+
 class DashboardFragment : Fragment() {
 
     private var _binding: FragmentDashboardBinding? = null
     private val binding get() = _binding!!
-    private lateinit var imageButton: ImageButton
-    private val IMAGE_PICK_REQUEST_CODE = 1
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,30 +38,11 @@ class DashboardFragment : Fragment() {
             textView.text = it
         }
 
-        imageButton = binding.imageButton
-        imageButton.setOnClickListener {
-            val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-            startActivityForResult(intent, IMAGE_PICK_REQUEST_CODE)
-        }
 
         return root
     }
 
-    fun setOnImageButtonClickListener(listener: View.OnClickListener) {
-        imageButton.setOnClickListener(listener)
-    }
 
-    fun setImage(uri: Uri?) {
-        imageButton.setImageURI(uri)
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == IMAGE_PICK_REQUEST_CODE && resultCode == Activity.RESULT_OK && data != null) {
-            val selectedImageUri: Uri? = data.data
-            setImage(selectedImageUri)
-        }
-    }
 
     override fun onDestroyView() {
         super.onDestroyView()

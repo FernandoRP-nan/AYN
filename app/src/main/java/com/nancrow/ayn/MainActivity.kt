@@ -12,8 +12,10 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.components.Dependency.setOf
 import com.nancrow.ayn.databinding.ActivityMainBinding
 import com.nancrow.ayn.ui.dashboard.DashboardFragment
+import com.nancrow.ayn.ui.home.HomeFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -37,10 +39,10 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        val dashboardFragment = navController.graph.findNode(R.id.navigation_dashboard)
-        dashboardFragment?.let {
+        val homeFragment = navController.graph.findNode(R.id.navigation_home)
+        homeFragment?.let {
             val fragment = supportFragmentManager.findFragmentById(it.id)
-            if (fragment is DashboardFragment) {
+            if (fragment is HomeFragment) {
                 fragment.setOnImageButtonClickListener {
                     val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
                     startActivityForResult(intent, IMAGE_PICK_REQUEST_CODE)
@@ -54,9 +56,9 @@ class MainActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == IMAGE_PICK_REQUEST_CODE && resultCode == Activity.RESULT_OK && data != null) {
             val selectedImageUri: Uri? = data.data
-            val dashboardFragment = supportFragmentManager.findFragmentById(R.id.navigation_dashboard)
-            if (dashboardFragment is DashboardFragment) {
-                dashboardFragment.setImage(selectedImageUri)
+            val homeFragment = supportFragmentManager.findFragmentById(R.id.navigation_dashboard)
+            if (homeFragment is HomeFragment) {
+                homeFragment.setImage(selectedImageUri)
             }
         }
     }
